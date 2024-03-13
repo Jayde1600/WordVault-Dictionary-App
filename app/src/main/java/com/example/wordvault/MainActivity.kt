@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wordvault.databinding.ActivityMainBinding
 import kotlinx.coroutines.GlobalScope
@@ -32,6 +33,26 @@ class MainActivity : AppCompatActivity() {
         private fun getMeaning(word : String) {
             setInProgress(true)
             GlobalScope.launch {
+
+                try {
+                    val response = RetrofitInstance.dictionaryAPI.getMeaning(word)
+                    if(response.body() == null) {
+                        throw(Exception())
+                    }
+                    runOnUiThread {
+                        setInProgress(false)
+                        response.body()?.first()?.let {
+                            setUI(it)
+                        }
+                    }
+
+                } catch (e : Exception) {
+                    runOnUiThread {
+                        setInProgress(false)
+                        Toast.makeText(applicationContext, "Something went wrong :(", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
                 val response = RetrofitInstance.dictionaryAPI.getMeaning(word)
                 runOnUiThread {
                     setInProgress(false)
