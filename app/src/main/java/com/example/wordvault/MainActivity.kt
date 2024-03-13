@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUI(response : WordResults) {
         binding.wordUp.text = response.word
-        binding.wordMean.text = response.word
+        binding.underWord.text = response.phonetic
         adapter.updateNewData(response.meanings)
     }
 

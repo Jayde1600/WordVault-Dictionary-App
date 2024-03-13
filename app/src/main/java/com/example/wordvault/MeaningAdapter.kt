@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wordvault.databinding.ActivityMainBinding
 import com.example.wordvault.databinding.DefinitionRecyclerRowBinding
 
 class MeaningAdapter(private var meaningList : List<Meaning>) : RecyclerView.Adapter<MeaningAdapter.MeaningViewHolder>() {
@@ -58,3 +57,5 @@ class MeaningAdapter(private var meaningList : List<Meaning>) : RecyclerView.Ada
         holder.bind(meaningList[position])
     }
 }
+
+

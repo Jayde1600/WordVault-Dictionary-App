@@ -16,3 +16,5 @@ data class Meaning(
 data class Definition(
     val definition: String
 )
+
+

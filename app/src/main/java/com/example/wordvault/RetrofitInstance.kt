@@ -18,3 +18,4 @@ object RetrofitInstance {
     val dictionaryAPI : DictionaryAPI = getInstance().create(DictionaryAPI::class.java)
 
 }
+
