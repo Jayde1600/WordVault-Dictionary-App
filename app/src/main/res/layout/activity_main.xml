@@ -26,6 +26,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Search"
+            android:textColor="@color/white"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="8dp"/>
 
@@ -59,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_volume_up_24"
+        android:backgroundTint="@color/white"
         app:fabSize="mini"
         android:id="@+id/pronunciationButton"
         android:layout_marginLeft="20dp"
