@@ -40,6 +40,10 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/wordUp"
         android:layout_width="wrap_content"
@@ -47,8 +51,23 @@
         android:text="Word"
         android:textSize="30sp"
         android:textColor="@color/blue"
+        android:layout_alignParentStart="true"
         android:textStyle="bold"
         android:layout_marginTop="8dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_volume_up_24"
+        app:fabSize="mini"
+        android:id="@+id/pronunciationButton"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/wordUp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/underWord"
